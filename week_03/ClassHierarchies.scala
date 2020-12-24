@@ -1,4 +1,4 @@
-objet intsets {
+object intsets {
 println("Welcome to the scala worksheet")
   val t1 = new NonEmpty(3, new Empty, new Empty)    // t1: NonEmpty = {.3.}
   val t2 = t1 incl 4 // 4 gets added                // t2: IntSet = {.3{.4.}} invariant held
