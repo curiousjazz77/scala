@@ -17,3 +17,4 @@ The Nothing Type
 
 
 What is the type of `if (true) 1 else false` ? AnyVal
+The branches terminate at either int or boolean. if you look back at the hierarchy map, you see they both belong to AnyVal
