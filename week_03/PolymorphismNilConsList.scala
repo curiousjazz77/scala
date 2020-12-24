@@ -5,7 +5,10 @@ POLYMORPHISM: a function type that comes "in many forms"
   
 Two principle forms of polymorphism:
   - subtyping: instances of a subclass can be passed to a base class
+    - List has 2 subtypes: Nil and Cons
+    - wherever you have a parameter that uses a list, you can use Nils or Cons
   - generics: instances of a function or class are created by type parametrization
+    - can create a list of ints, doubles, etc with generic typing
 
 Nil -  the empty list
 
@@ -77,4 +80,30 @@ Type parameters in scala don't affect evaluation in Scala
 We can assume that all type parameneters and type arguments are removed before 
 evaluating the program: THIS IS CALLED: TYPE ERASURE
 
+
+  Exercise:
+  Given our definition of lists, write a function nth that takes an integer n and the list
+  and selects the nth element of the list. So we assume that elements in the list are
+  numbered from zero. So the first element in the list has index zero, the second has
+  index one, and so on. The other specification is that if an index is outside the range
+  from zero up to the length of the list minus one, so it's outside range, then you should
+  throw an index out of bounds exception.
+  So let's see how we would solve the exercise.
+  
 */
+
+import week3._
+object nth {
+   def nth[T](n: Int, xs: List[T]): T =
+      if (xs.isEmpty) throw new IndexOutOfBoundsException
+      if (n == 0) xs.head
+      else nth(n - 1, xs.tail)
+  
+  val list = new Cons(1, new Cons(2, new Cons(3, new Nil)))
+  
+  nth(2, list) //res0: Int = 3
+  
+  // what if index is not part of the list to get out of bounds exception
+  nth(4, list)
+  nth(-1, list)
+}
