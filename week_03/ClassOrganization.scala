@@ -36,8 +36,14 @@ class Rational(x: Int, y:Int) {
 
 	def - (that: Rational) = this + -that
 }
-																																							
+
+
+
 // in separate worksheet
+import week3._ //imports everything, but sometimes less legible. (wildcard import)
+//import week3.Rational           (named import)
+//import week3.{Rational, Hello}  (named import)
+
 object scratch {
   new week3.Rational(1,2)
 }
