@@ -14,3 +14,6 @@ The Nothing Type
 - Why is that useful?
     - to signal abnormal termination
     - As an element type of empty collections (see next session)
+
+
+What is the type of `if (true) 1 else false` ? AnyVal
