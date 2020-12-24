@@ -23,37 +23,37 @@ class TweetSetSuite {
 
   def size(set: TweetSet): Int = asSet(set).size
 
- @Ignore("not ready") @Test def `filter: on empty set`: Unit =
+ @Test def `filter: on empty set`: Unit =
     new TestSets {
       assertEquals(0, size(set1.filter(tw => tw.user == "a")))
     }
 
-  @Ignore("not ready") @Test def `filter: a on set5`: Unit =
+  @Test def `filter: a on set5`: Unit =
     new TestSets {
       assertEquals(1, size(set5.filter(tw => tw.user == "a")))
     }
 
-  @Ignore("not ready") @Test def `filter: twenty on set5`: Unit =
+  @Test def `filter: twenty on set5`: Unit =
     new TestSets {
       assertEquals(2, size(set5.filter(tw => tw.retweets == 20)))
     }
 
-  @Ignore("not ready") @Test def `union: set4c and set4d`: Unit =
+  @Test def `union: set4c and set4d`: Unit =
     new TestSets {
       assertEquals(4, size(set4c.union(set4d)))
     }
 
-  @Ignore("not ready") @Test def `union: with empty set1`: Unit =
+  @Test def `union: with empty set1`: Unit =
     new TestSets {
       assertEquals(4, size(set5.union(set1)))
     }
 
-  @Ignore("not ready") @Test def `union: with empty set2`: Unit =
+  @Test def `union: with empty set2`: Unit =
     new TestSets {
       assertEquals(4, size(set1.union(set5)))
     }
 
-  @Ignore("not ready") @Test def `descending: set5`: Unit =
+  @Test def `descending: set5`: Unit =
     new TestSets {
       val trends = set5.descendingByRetweet
       assert(!trends.isEmpty)

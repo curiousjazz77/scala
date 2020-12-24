@@ -1,2 +1,11 @@
 compile
 test
+compile
+objsets.TweetSet
+Main
+runMain
+bgRunMain
+run-main objsets.TweetSet
+runMain objsets.TweetSet
+exit
+run
