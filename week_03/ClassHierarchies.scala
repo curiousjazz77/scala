@@ -5,11 +5,17 @@ println("Welcome to the scala worksheet")
   
 }
 
+//IntSet is called the superclass of Empty and NonEmpty
 abstract class IntSet{
   def contains(x:Int): Boolean
   def incl(x:Int): IntSet
 }
 
+// Empty and NonEmpty conform to type IntSet and can be used where it is
+// They are subclasses of IntSet
+
+//Base classes of NonEmpty are IntSet and Object
+// The indirect or direct superclasses of a class are called base classes.
 class Empty extends Intset {
   def contains(x:Int): Boolean = false
   def incl(x:Int): IntSet = new NonEmpty(x, new Empty, new Empty)
