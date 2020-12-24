@@ -1,4 +1,12 @@
 /*
+POLYMORPHISM: a function type that comes "in many forms"
+  - the function can be applied to arguments of many types, or
+  - the type can have instances of many types
+  
+Two principle forms of polymorphism:
+  - subtyping: instances of a subclass can be passed to a base class
+  - generics: instances of a function or class are created by type parametrization
+
 Nil -  the empty list
 
 Cons - A cell containing an element and the remainder of the list.
@@ -64,3 +72,9 @@ We can then write:
 singleton[Int](1)
 singleton[Boolean](true)
 
+
+Type parameters in scala don't affect evaluation in Scala
+We can assume that all type parameneters and type arguments are removed before 
+evaluating the program: THIS IS CALLED: TYPE ERASURE
+
+*/
