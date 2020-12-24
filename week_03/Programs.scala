@@ -10,6 +10,8 @@ Or you could also use Java and Hello, that would do the same thing in this case.
 So we create in the week three package this time not a worksheet but a Scala object. Call it Hello.
 */
 
+package week3
+
 object Hello {
   def main(args: Array[String]) = println("hello world")
 }
