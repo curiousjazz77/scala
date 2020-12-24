@@ -1,10 +1,9 @@
-```scala
+
 // Swap out named functions for operators
 
 class Rational(x: Int, y:Int) {
 	require( y != 0, "denominator must be nonzero")
 
-	
 	def this(x:Int) = this(x, 1)
 
 	private def gcd(a:Int, b:Int): Int = if (b==0) a else gcd(b, a % b)
@@ -15,6 +14,7 @@ class Rational(x: Int, y:Int) {
 	override def toString = {
 		private val g = gcd(numer, denom)
 		numer/g + "/" + denom/g
+	}
 
 	def <(that: Rational) = numer * that.denom < that.numer * denom
 
@@ -31,8 +31,7 @@ class Rational(x: Int, y:Int) {
 
 	def - (that: Rational) = this + -that
 }
-																																								
-}
+																																							
 
 object rationals {
 
@@ -63,4 +62,4 @@ object rationals {
 
 	new Rational(2) // res = 2/1
 }
-```
+
