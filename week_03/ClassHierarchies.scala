@@ -73,6 +73,17 @@ class NonEmpty(elem: Int, left: IntSet, right:IntSet) extends Intset {
   That means that the code that's invoked by a method called depends on the runtime
   type of the object that contains the method. I believe that's best shown in an example.
   So let's say you have the code Empty contains 1. What do you do?
+  
+  Dynamic Binding
+  
+  Empty contains 1                             (returns false)
+  (new NonEmpty(7, Empty, Empty)) contains 7   (returns true)
+  
+  Dynamic Dispatch of methods is analogous to calls to higher order functions
+  
+  The similarity is that in both cases the code that gets executed on a functional method call is not known statically.
+  It's not apparent from the name or the type of the thing you called.
+  But it is determined by the run time value that is passed.
   """
   def union(other: Intset): IntSet =
     ((left union right) union other ) incl elem
